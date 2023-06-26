@@ -1,5 +1,4 @@
 class ShoppingListsController < ApplicationController
-
   before_action :authenticate_user!, except: [:show]
   def index
     @current_user = current_user
