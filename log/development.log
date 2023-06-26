@@ -525,3 +525,13 @@ Processing by ShoppingListsController#index as TURBO_STREAM
 Completed 200 OK in 304ms (Views: 39.1ms | ActiveRecord: 20.4ms | Allocations: 18450)
 
 
+Started GET "/" for ::1 at 2023-06-26 15:09:53 +0200
+Processing by PublicRecipesController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering public_recipes/index.html.erb within layouts/application
+  Rendered public_recipes/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 256)
+  Rendered layout layouts/application.html.erb (Duration: 80.5ms | Allocations: 14056)
+Completed 200 OK in 238ms (Views: 88.3ms | ActiveRecord: 29.3ms | Allocations: 28878)
+
+
