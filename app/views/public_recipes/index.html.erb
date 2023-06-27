@@ -1,3 +1,25 @@
-<h1>Welcome to the recipe app</h1>
+<h1>Welcome to the Recipe App</h1>
 <%= render '/shared/navbar'%>
+<div class = 'container'>
+<% @recipes.each do |recipe|%>
+<div class = 'recipe_container'>
+<div class = 'recipe_heading'>
+<%= recipe.name %>
+<div class = 'btn_recipe_remove'>
+<%= "By: #{recipe.user.name}" %>
+</div>
+
+</div>
+<div class = 'recipe_text'>
+<%
+=begin%>
+ <p><%= @foods.count %></p>
+<p><%= @total_price %></p> 
+<%
+=end%>
+<div>
+<%end%>
+</div>
+
+</div>
 
