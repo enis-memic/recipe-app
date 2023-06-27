@@ -9,29 +9,28 @@
 </div>
 
 <div class="mt-2">
-    <% if @foods.length.zero? %>
-      <h3 class="text-2xl font-bold text-center text-indigo-600">
-       Please add your recipe first!
-      </h3>
-    <% else %>
-      <table class="m-auto border border-slate-500">
-        <thead>
+  <% if @foods.length.zero? %>
+    <h3 class="text-2xl font-bold text-center text-indigo-600">
+      Please add your recipe first!
+    </h3>
+  <% else %>
+    <table class="table table-striped mx-auto" style="width: 500px;">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th scope="col">Food</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Total Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |f| %>
           <tr>
-            <th class="border border-slate-600 p-4"> Food </th>
-            <th class="border border-slate-600 p-4"> Quantity </th>
-            <th class="border border-slate-600 p-4"> Total Price </th>
+            <td><%= f[:name] %></td>
+            <td><%= f[:quantity] * -1 %></td>
+            <td>$<%= f[:price] * -1 %></td>
           </tr>
-        </thead>
-        <tbody>
-         <%@foods.each do |f|%>
-    <tr>
-      <td> <%=f[:name]%> </td>
-      <td> <%=f[:quantity] * -1%></td>
-      <td> $<%=f[:price] * -1%></td>
-      </td>
-      </tr>
-      <%end%>
-        </tbody>
-      </table>
-    <%end%>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>
