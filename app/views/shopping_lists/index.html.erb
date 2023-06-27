@@ -5,7 +5,7 @@
 <h1 class='text-center' style="margin-bottom: 30px;">Shopping list </h1>
 <div style="display: flex; justify-content: space-around; margin-bottom: 40px;">
     <h4>Amount of food items to buy: <span><%= @foods.length %></span> </h4>
-    <h4>Total value of food needed: <span>$<%= @total_price %> </span></h4>
+    <h4>Total value of food needed: <span>$<%= @total_price * -1 %> </span></h4>
 </div>
 
 <div class="mt-2">
@@ -23,13 +23,14 @@
           </tr>
         </thead>
         <tbody>
-          <% @foods.each do |shopping_list| %>
-            <tr>
-              <td class="border border-slate-600 p-4" ><%= shopping_list[:name] %></td>
-              <td class="border border-slate-600 p-4" ><%= shopping_list[:quantity] %></td>
-              <td class="border border-slate-600 p-4" >$<%= shopping_list[:total_price] %></td>
-            </tr>
-          <% end %>
+         <%@foods.each do |f|%>
+    <tr>
+      <td> <%=f[:name]%> </td>
+      <td> <%=f[:quantity] * -1%></td>
+      <td> $<%=f[:price] * -1%></td>
+      </td>
+      </tr>
+      <%end%>
         </tbody>
       </table>
     <%end%>

@@ -8,9 +8,9 @@
     <thead>
       <tr class="bg-blue-500 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
         <th scope='col'> Food </th>
+        <th> Quantity </th>
         <th> Measurement Unit </th>
         <th> Price </th>
-        <th> Quantity </th>
          <th> Actions </th>
       </tr>
     </thead>
@@ -20,6 +20,9 @@
           <td>
             <%= food.name %>
             </td>
+             <td>
+            <%= food.quantity.to_i%>
+            </td>
         <td>
             <%=food.measurement_unit%>
         </td>
@@ -27,9 +30,6 @@
             <%= "$#{food.price.to_i}"%>
             </td>
 
-             <td>
-            <%= "$#{food.quantity.to_i}"%>
-            </td>
         
           <td><%= button_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" } %></td>
 
