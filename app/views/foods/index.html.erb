@@ -10,7 +10,8 @@
         <th scope='col'> Food </th>
         <th> Measurement Unit </th>
         <th> Price </th>
-        <th> Actions </th>
+        <th> Quantity </th>
+         <th> Actions </th>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +25,10 @@
         </td>
             <td>
             <%= "$#{food.price.to_i}"%>
+            </td>
+
+             <td>
+            <%= "$#{food.quantity.to_i}"%>
             </td>
         
           <td><%= button_to "Delete", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" } %></td>

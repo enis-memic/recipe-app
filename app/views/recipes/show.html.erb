@@ -8,6 +8,14 @@
 <p><%= "Preparation Time: #{@recipe.preparation_time} hour"%><p>
 <p><%= "Cooking Time: #{@recipe.cooking_time} hour"%><p>
 <p><%= "Steps to prepare: #{@recipe.description}"%><p>
+<%= form_for @recipe do |f| %>
+  <div class="toggle-switch">
+    <%= f.check_box :public, id: "visibility-toggle", class: "toggle-switch-checkbox" %>
+    <%= f.label :public, class: "toggle-switch-label", for: "visibility-toggle" %>
+  </div>
+  <%= f.submit "Update Visibility", class: "btn btn-primary" %>
+<% end %>
+
 </div>
 </div>
 <div class = 'buttons'>
@@ -24,17 +32,19 @@
     <th>Actions</th>
   </tr>
   <tr>
-  <%@recipe.foods.each |food| do %>
+  <% @recipe.foods.each do  |food| %>
     <td><%= food.name %></td>
     <%@quantity = RecipeFood.find_by(food_id: food.id).quantity%>
       <td> <%= @quantity %> </td>
     <td><%= "$ #{food.price * @quantity}" %></td>
     <% if !current_user.nil? && current_user.id == @recipe.user_id%>
       <td> <%= button_to "remove", recipe_recipe_food_path(@recipe.id, food.id), method: :delete%>
+
       <%end%>
       </td>
+      <%end%>
   </tr>
-  <%end%>
+  
   </table>
 </div>
 </div>
@@ -42,7 +52,3 @@
 
 
 
-<div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" id="customSwitch1">
-  <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
-</div>
