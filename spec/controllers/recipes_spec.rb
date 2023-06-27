@@ -10,19 +10,19 @@ RSpec.describe Recipe, type: :model do
     expect(@recipe.name).to eq('pizza')
   end
 
-  it 'recipe name' do
+  it 'recipe prep time' do
     expect(@recipe.preparation_time).to eq(1)
   end
 
-  it 'recipe name' do
+  it 'recipe cooking time' do
     expect(@recipe.cooking_time).to eq(1)
   end
 
-  it 'recipe name' do
+  it 'recipe description' do
     expect(@recipe.description).to eq('pizza')
   end
 
-  it 'recipe name' do
+  it 'recipe public' do
     expect(@recipe.public).to eq(true)
   end
 end
