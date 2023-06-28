@@ -11,7 +11,6 @@ RSpec.describe 'Recipes', type: :feature do
       visit recipes_path
     end
 
-
     it 'renders name of recipe' do
       expect(page).to have_content(@recipe.name)
     end
