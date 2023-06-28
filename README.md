@@ -127,10 +127,7 @@ Run: rspec to run tests
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **[Navigation Bar]**
-- [ ] **[Update recipes and food with shopping list]**
-- [ ] **[Toggle button to show as a public blog]**
-
+- [ ] **[API and documentation will be added]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,7 +147,7 @@ If you like this project please follow me on github
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse and my Coding partner Enis Memic.
+I would like to thank Microverse and my Coding partner Dheeraj
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

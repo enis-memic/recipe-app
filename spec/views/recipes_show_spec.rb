@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipes', type: :feature do
-    include Devise::Test::IntegrationHelpers
-describe 'show' do
+  include Devise::Test::IntegrationHelpers
+  describe 'show' do
     before(:each) do
-      @user = User.create(name: 'tom', email: 'tom@mail.com', password: 123456)
+      @user = User.create(name: 'tom', email: 'tom@mail.com', password: 123_456)
       sign_in @user
       @recipe = Recipe.create(user: @user, name: 'Pizza', preparation_time: 2, cooking_time: 1,
                               description: 'Italian Dish', public: true)

@@ -7,7 +7,7 @@ RSpec.describe RecipeFood, type: :model do
     @food = @user.foods.new(name: 'cheese', measurement_unit: 'grams', price: 10, quantity: 10)
     @recipe_food = @recipe.recipe_foods.new(quantity: 2, food_id: @food.id)
     @recipe_food.food = @food
-end
+  end
 
   it 'should have the correct food' do
     expect(@recipe_food.food).to be @food
@@ -20,6 +20,4 @@ end
   it 'should have the correct quantity' do
     expect(@recipe_food.quantity).to be 2
   end
-
- 
 end
