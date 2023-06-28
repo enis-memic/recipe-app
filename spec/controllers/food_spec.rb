@@ -21,6 +21,4 @@ RSpec.describe Food, type: :model do
   it 'food quantity' do
     expect(@food.quantity).to eq(10)
   end
-
 end
-
